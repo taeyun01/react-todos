@@ -21,9 +21,7 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
       <h2 style={h2Style}>Done..!✔️</h2>
       <div style={todoItemStyle}>
         {todos
-          .filter((todo) => {
-            return todo.isDone !== false;
-          })
+          .filter((todo) => todo.isDone !== false)
           .map((todo) => (
             <TodoItem
               key={todo.id}
