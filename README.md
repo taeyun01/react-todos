@@ -1,8 +1,8 @@
 # TodoList 피드백 적용
 
-    - 함수 및 변수명 좀 더 직관적이게 적용
-    - newTodo객체 단축속성으로 적용
-    - 중복 됐었던 Working, Done 코드. TodoWorkingDone컴포넌트 하나로 통합하여 적용
+- 함수 및 변수명 좀 더 직관적이게 적용
+- newTodo객체 단축속성으로 적용
+- 중복 됐었던 Working, Done 코드. TodoWorkingDone컴포넌트 하나로 통합하여 적용
 
 분리한 컴포넌트 : TodoForm, TodoList, TodoWorkingDone, TodoItem, ToggleButton
 
