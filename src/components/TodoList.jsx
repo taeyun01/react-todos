@@ -1,54 +1,27 @@
 import React from "react";
-import TodoItem from "./TodoItem";
+import TodoWorking from "./TodoWorking";
+import TodoDone from "./TodoDone";
 
-const TodoList = ({ todos, deleteTodo, completeTodo }) => {
+const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
   return (
     <div style={listWrapStyle}>
-      <h2 style={h2Style}>Working..🔥</h2>
-      <div style={todoItemStyle}>
-        {todos
-          .filter((todo) => todo.isDone === false)
-          .map((todo) => (
-            <TodoItem
-              key={todo.id}
-              {...todo}
-              deleteTodo={deleteTodo}
-              completeTodo={completeTodo}
-            />
-          ))}
-      </div>
+      <TodoWorking
+        todos={todos}
+        deleteTodo={deleteTodo}
+        toggleTodo={toggleTodo}
+      />
 
-      <h2 style={h2Style}>Done..!✔️</h2>
-      <div style={todoItemStyle}>
-        {todos
-          .filter((todo) => todo.isDone !== false)
-          .map((todo) => (
-            <TodoItem
-              key={todo.id}
-              {...todo}
-              deleteTodo={deleteTodo}
-              completeTodo={completeTodo}
-            />
-          ))}
-      </div>
+      <TodoDone
+        todos={todos}
+        deleteTodo={deleteTodo}
+        toggleTodo={toggleTodo}
+      />
     </div>
   );
 };
 
-const todoItemStyle = {
-  display: "flex",
-  justifyContent: "flex-start",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  gap: "16px",
-};
-
 const listWrapStyle = {
   padding: "20px",
-};
-
-const h2Style = {
-  margin: "10px 0px",
 };
 
 export default TodoList;

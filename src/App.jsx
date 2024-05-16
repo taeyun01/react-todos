@@ -24,8 +24,8 @@ function App() {
   const createTodo = (title, content) => {
     const newTodo = {
       id: new Date().getTime(),
-      title: title,
-      content: content,
+      title,
+      content,
       isDone: false,
     };
     setTodos([...todos, newTodo]);
@@ -36,7 +36,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const completeTodo = (id) => {
+  const toggleTodo = (id) => {
     setTodos(
       todos.map(
         (todo) =>
@@ -50,11 +50,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm createTodo={createTodo} />
-      <TodoList
-        todos={todos}
-        deleteTodo={deleteTodo}
-        completeTodo={completeTodo}
-      />
+      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
     </div>
   );
 }

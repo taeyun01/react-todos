@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import "./Header.css";
 
 const TodoForm = ({ createTodo }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const titleInput = (e) => {
+  const onChangeTitle = (e) => {
     setTitle(e.target.value);
   };
 
-  const contentInput = (e) => {
+  const onChangeContent = (e) => {
     setContent(e.target.value);
   };
 
@@ -34,14 +33,14 @@ const TodoForm = ({ createTodo }) => {
             style={inputStyle}
             type="text"
             value={title}
-            onChange={titleInput}
+            onChange={onChangeTitle}
           />
           내용 :{" "}
           <input
             style={inputStyle}
             type="text"
             value={content}
-            onChange={contentInput}
+            onChange={onChangeContent}
           />
         </div>
         <div>

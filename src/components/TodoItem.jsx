@@ -1,12 +1,9 @@
 import React from "react";
+import ToggleButton from "./ToggleButton";
 
-const TodoItem = ({ id, title, content, isDone, deleteTodo, completeTodo }) => {
+const TodoItem = ({ id, title, content, isDone, deleteTodo, toggleTodo }) => {
   const deleteItem = () => {
     deleteTodo(id);
-  };
-
-  const completeTodoItem = () => {
-    completeTodo(id);
   };
 
   return (
@@ -19,13 +16,9 @@ const TodoItem = ({ id, title, content, isDone, deleteTodo, completeTodo }) => {
         </button>
 
         {isDone ? (
-          <button style={closeBtn} onClick={completeTodoItem}>
-            취소
-          </button>
+          <ToggleButton isDone={isDone} id={id} toggleTodo={toggleTodo} />
         ) : (
-          <button style={completeBtn} onClick={completeTodoItem}>
-            완료
-          </button>
+          <ToggleButton isDone={isDone} id={id} toggleTodo={toggleTodo} />
         )}
       </div>
     </div>
@@ -57,26 +50,6 @@ const deleteBtn = {
   cursor: "pointer",
   borderRadius: "5px",
   backgroundColor: "#FF495F",
-  color: "white",
-};
-
-const completeBtn = {
-  border: "none",
-  width: "100%",
-  padding: "8px 0",
-  cursor: "pointer",
-  borderRadius: "5px",
-  backgroundColor: "#7C7EFF",
-  color: "white",
-};
-
-const closeBtn = {
-  border: "none",
-  width: "100%",
-  padding: "8px 0",
-  cursor: "pointer",
-  borderRadius: "5px",
-  backgroundColor: "#757575",
   color: "white",
 };
 
