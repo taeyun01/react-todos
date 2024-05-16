@@ -1,13 +1,13 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoDone = ({ todos, deleteTodo, toggleTodo }) => {
+const TodoWorkingDone = ({ isDone, todos, deleteTodo, toggleTodo }) => {
   return (
     <>
-      <h2 style={h2Style}>{todos.isDone ? "Working..🔥" : "Done..!✔️"}</h2>
+      <h2 style={h2Style}>{!isDone ? "Working..🔥" : "Done.."}</h2>
       <div style={todoItemStyle}>
         {todos
-          .filter((todo) => todo.isDone !== false)
+          .filter((todo) => todo.isDone === isDone)
           .map((todo) => (
             <TodoItem
               key={todo.id}
@@ -32,4 +32,5 @@ const todoItemStyle = {
 const h2Style = {
   margin: "10px 0px",
 };
-export default TodoDone;
+
+export default TodoWorkingDone;

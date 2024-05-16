@@ -1,5 +1,11 @@
 # TodoList 피드백 적용
 
+    - 함수 및 변수명 좀 더 직관적이게 적용
+    - newTodo객체 단축속성으로 적용
+    - 중복 됐었던 Working, Done 코드. TodoWorkingDone컴포넌트 하나로 통합하여 적용
+
+분리한 컴포넌트 : TodoForm, TodoList, TodoWorkingDone, TodoItem, ToggleButton
+
 # 리액트 입문 과제
 
 1. JSX문법이란 무엇일까요?
@@ -20,5 +26,3 @@
 
 5. 반복되는 컴포넌트를 파악하고 재사용할 수 있는 컴포넌트로 분리해 보셨나요? 그렇다면 어떠한 이점이 있었나요?
    - 컴포넌트를 분리해서 사용하니 간편하고 가독성도 깔끔해 지는것 같습니다.
-
-분리한 컴포넌트 : TodoForm, TodoListWrapper, TodoItem

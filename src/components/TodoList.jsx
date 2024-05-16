@@ -1,20 +1,20 @@
 import React from "react";
-import TodoWorking from "./TodoWorking";
-import TodoDone from "./TodoDone";
+import TodoWorkingDone from "./TodoWorkingDone";
 
 const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
   return (
     <div style={listWrapStyle}>
-      <TodoWorking
+      <TodoWorkingDone
         todos={todos}
         deleteTodo={deleteTodo}
         toggleTodo={toggleTodo}
+        isDone={false}
       />
-
-      <TodoDone
+      <TodoWorkingDone
         todos={todos}
         deleteTodo={deleteTodo}
         toggleTodo={toggleTodo}
+        isDone={true}
       />
     </div>
   );
