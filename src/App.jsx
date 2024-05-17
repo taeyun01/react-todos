@@ -23,12 +23,12 @@ function App() {
 
   const createTodo = (title, content) => {
     const newTodo = {
-      id: new Date().getTime(),
+      id: crypto.randomUUID(),
       title,
       content,
       isDone: false,
     };
-    setTodos([...todos, newTodo]);
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
 
   const deleteTodo = (id) => {
